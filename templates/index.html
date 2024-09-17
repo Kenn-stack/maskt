@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title%} Maskt {% endblock title %}
+
+
+{% block content %}
+    Enter the room link here<br>
+    <form method="post">
+        {% csrf_token %}
+        <input id="room-id-input" type="text" size="100" name="id"><br>
+        <input id="room-name-submit" type="submit" value="Enter">
+    </form>
+
+    <p> Want to start a room?</p>
+    <a href="{% url 'create_room' %}"> Create Room</a>
+
+
+    {% comment %} <script>
+        document.querySelector('#room-id-input').focus();
+        document.querySelector('#room-id-input').onkeyup = function(e) {
+            if (e.key === 'Enter') {  // enter, return
+                document.querySelector('#room-name-submit').click();
+            }
+        };
+
+        document.querySelector('#room-name-submit').onclick = function(e) {
+            let roomId = document.querySelector('#room-id-input').value;
+            window.location.pathname = '/room/' + roomId + '/';
+        };
+    </script> {% endcomment %}
+{% endblock content %}

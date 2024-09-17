@@ -1,0 +1,45 @@
+{% if online_count %}
+    <h1 id="online" class="position-fixed p-1 w-auto">Online: {{ online_count }} </h1>
+{% endif %}
+
+{% if message %}
+    {% if my_message %}
+        <div id="chat-space" hx-swap-oob="beforeend">
+            <div class="chat-message-right speech-wrapper">
+                <div class="bubble">
+                    <div class="txt">
+                        <p class="name">{{ sender }}</p>
+                        <p class="message">{{ message }}</p>
+                        <span class="timestamp">10:20 pm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+    <div id="chat-space" hx-swap-oob="beforeend">
+        <div class="chat-message-left speech-wrapper">
+            <div class="bubble">
+                <div class="txt">
+                    <p class="name">{{ sender }}</p>
+                    <p class="message">{{ message }}</p>
+                    <span class="timestamp">10:20 pm</span>
+                </div>
+            </div>
+        </div>
+</div>
+    {% endif %}
+
+{% endif %}
+
+
+
+
+
+
+{% comment %} <div class="speech-wrapper">
+    <div class="bubble">
+      <div class="txt">
+        <p class="name">Benni</p>
+        <p class="message">Hey, check out this Pure CSS speech bubble...</p>
+        <span class="timestamp">10:20 pm</span>
+      </div> {% endcomment %}

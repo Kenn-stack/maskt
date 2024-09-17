@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Room</title>
+</head>
+<body>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="room-name">Room name</label>
+        <input id="room-name" name="room-name" type="text" size="100"><br>
+
+        <input id="room-name-submit" type="submit" value="Enter">
+    </form>
+
+</body>
+</html>
